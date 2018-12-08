@@ -86,6 +86,14 @@ function tts($keyword) {
     $result = $uri; 
     return $result; 
 }
+
+function longdo($keyword) { 
+    $uri = "https://dict.longdo.com/mobile.php?search=" . $keyword; 
+
+    $response = Unirest\Request::get("$uri"); 
+    $result = $uri; 
+    return $result; 
+}
 #-------------------------[Close]-------------------------#
 #-------------------------[Open]-------------------------#
 function urb_dict($keyword) {
@@ -461,6 +469,23 @@ if ($message['type'] == 'text') {
         );
     }
 }
+
+
+
+if ($message['type'] == 'text') {
+    if ($command == '/ld') {
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => 'Dict : ' . longdo($options)
+                )
+            )
+        );
+    }
+}
+
 #-------------------------[Close]-------------------------#
 #-------------------------[Open]-------------------------#
 if($message['type']=='text') {
