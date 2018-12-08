@@ -98,7 +98,7 @@ $data=file_get_contents("http://dict.longdo.com/mobile.php?search=".$keyword);
     $data2=strip_tags($data,"<a><table><td><tr><font><style><meta><br>");
 
 
-    $result = $data; 
+    $result = $data2; 
     return $result; 
 }
 #-------------------------[Close]-------------------------#
