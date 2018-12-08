@@ -475,13 +475,13 @@ if ($message['type'] == 'text') {
 
 
 if ($message['type'] == 'text') {
-    if ($command == '/ld') {
+    if ($command == 'ดิก') {
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
                 array(
                     'type' => 'text',
-                    'text' => 'Dict : ' . longdo($options)
+                    'text' => 'ผลลัพธ์ : ' . longdo($options)
                 )
             )
         );
