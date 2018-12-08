@@ -91,7 +91,14 @@ function longdo($keyword) {
     $uri = "https://dict.longdo.com/mobile.php?search=" . $keyword; 
 
     $response = Unirest\Request::get("$uri"); 
-    $result = $uri; 
+
+
+
+$data=file_get_contents("http://dict.longdo.com/mobile.php?search=".$keyword);
+    $data2=strip_tags($data,"<a><table><td><tr><font><style><meta><br>");
+
+
+    $result = $data; 
     return $result; 
 }
 #-------------------------[Close]-------------------------#
