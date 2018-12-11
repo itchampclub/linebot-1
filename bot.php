@@ -471,23 +471,40 @@ if ($message['type'] == 'text') {
         );
     }
 }
-
-
-
+#-------------------------[Close]-------------------------#
+#-------------------------[Open]-------------------------#
 if ($message['type'] == 'text') {
     if ($command == 'ดิก') {
         $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-                    'type' => 'text',
-                    'text' => 'ผลลัพธ์ : ' . longdo($options)
-                )
-            )
-        );
+            'replyToken' => $replyToken, 
+            'messages' => array( 
+                array ( 
+                        'type' => 'template', 
+                          'altText' => 'Dictionary', 
+                          'template' =>  
+                          array ( 
+                            'type' => 'buttons', 
+                            'thumbnailImageUrl' => $result, 
+                            'imageAspectRatio' => 'rectangle', 
+                            'imageSize' => 'cover', 
+                            'imageBackgroundColor' => '#FFFFFF', 
+                            'title' => 'Dictionary', 
+                            'text' => 'Link Image', 
+                            'actions' =>  
+                            array ( 
+                              0 =>  
+                              array ( 
+                                'type' => 'uri', 
+                                'label' => 'ผลลัพธ์', 
+                                'uri' =>  . longdo($options), 
+                              ), 
+                            ), 
+                          ), 
+                        ) 
+            ) 
+        ); 
     }
 }
-
 #-------------------------[Close]-------------------------#
 #-------------------------[Open]-------------------------#
 if($message['type']=='text') {
