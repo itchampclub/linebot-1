@@ -496,10 +496,10 @@ if ($message['type'] == 'text') {
                               array ( 
                                 'type' => 'uri', 
                                 'label' => 'ผลลัพธ์', 
-                                'uri' =>  . longdo($options), 
-                              ), 
-                            ), 
-                          ), 
+                                'uri' =>  . longdo($options)
+                              )
+                            )
+                          )
                         ) 
             ) 
         ); 
