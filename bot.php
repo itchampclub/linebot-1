@@ -3,13 +3,6 @@ require_once('./line_class.php');
 require_once('./unirest-php-master/src/Unirest.php');
 include './GoogleTranslate.php';
 
- 
-$t = new GoogleTranslate; 
-$t->inLang = 'en'; 
-$t->outLang = 'th'; 
-echo $t->translate('Hello'); 
-$mymsg = $t->translate('Hello');
- 
 
 
 $channelAccessToken = 'WsEg0h0hvWL6AH/5vRTp/VoKgHexRMQ+FOgbI9xrJ19q07jk59Z4X9p6laKD7BR6s8F8E3rZ0pvht4n4NOAtNkA726d4quuAYJW/P0rqABDermZI5505WTp5ix0BjLn6WVb67TpH/sIl6Bwv7m+yagdB04t89/1O/w1cDnyilFU='; //sesuaikan 
