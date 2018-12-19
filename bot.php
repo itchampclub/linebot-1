@@ -79,7 +79,20 @@ function tts($keyword) {
     $result = $uri; 
     return $result; 
 }
+#-------------------------[Close]-------------------------#
+#-------------------------[Open]-------------------------#
+function yandex($keyword) { 
+    $uri = "https://translate.yandex.net/api/v1.5/tr.json/translate?lang=en-th&key=trnsl.1.1.20181219T062414Z.5b564dfddd592ba6.b745ec8bc8abce2a600d3fc10eb4a37fc77d1b20&text=" . $keyword; 
 
+    $response = Unirest\Request::get("$uri"); 
+
+
+    $result = $uri; 
+    return $result; 
+}
+
+#-------------------------[Close]-------------------------#
+#-------------------------[Open]-------------------------#
 function longdo($keyword) { 
     $uri = "https://dict.longdo.com/mobile.php?search=" . $keyword; 
 
@@ -490,6 +503,40 @@ if ($message['type'] == 'text') {
                                 'type' => 'uri', 
                                 'label' => 'ผลลัพธ์', 
                                 'uri' => longdo($options)
+                              )
+                            )
+                          )
+                        ) 
+            ) 
+        ); 
+    }
+}
+#-------------------------[Close]-------------------------#
+#-------------------------[Open]-------------------------#
+if ($message['type'] == 'text') {
+    if ($command == 'แปล') {
+        $balas = array(
+            'replyToken' => $replyToken, 
+            'messages' => array( 
+                array ( 
+                        'type' => 'template', 
+                          'altText' => 'Dictionary', 
+                          'template' =>  
+                          array ( 
+                            'type' => 'buttons', 
+                            'thumbnailImageUrl' => $result, 
+                            'imageAspectRatio' => 'rectangle', 
+                            'imageSize' => 'cover', 
+                            'imageBackgroundColor' => '#FFFFFF', 
+                            'title' => 'Dictionary', 
+                            'text' => 'Link Image', 
+                            'actions' =>  
+                            array ( 
+                              0 =>  
+                              array ( 
+                                'type' => 'uri', 
+                                'label' => 'ผลลัพธ์', 
+                                'uri' => yandex($options)
                               )
                             )
                           )
