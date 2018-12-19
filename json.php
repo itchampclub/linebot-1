@@ -1,6 +1,6 @@
 <?php
 
-$json = '{"foo-bar": สวัสดี}';
+$json = '{"foo-bar": 12345}';
 
 
 $obj = json_decode($json);
