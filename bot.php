@@ -26,7 +26,36 @@ if (count($pesan_datang) > 2) {
         $options .= $pesan_datang[$i];
     }
 }
+
 #-------------------------[Function Open]-------------------------#
+#-------------------------[Open]-------------------------#
+function yandex($keyword) {
+    $uri = "https://translate.yandex.net/api/v1.5/tr.json/translate?lang=en-th&key=trnsl.1.1.20181219T062414Z.5b564dfddd592ba6.b745ec8bc8abce2a600d3fc10eb4a37fc77d1b20&text=" . $keyword;
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+	$result = $json['text'][0];
+    return $result;
+}
+
+#-------------------------[Close]-------------------------#
+#-------------------------[Open]-------------------------#
+function longdo($keyword) { 
+    $uri = "https://dict.longdo.com/mobile.php?search=" . $keyword; 
+    $response = Unirest\Request::get("$uri"); 
+    $result = $uri; 
+    return $result; 
+}
+#-------------------------[Close]-------------------------#
+
+
+
+
+
+
+
+
+
+
 #-------------------------[Open]-------------------------#
 function quotes($keyword) {
     $uri = "https://rest.farzain.com/api/motivation.php?apikey=fDh6y7ZwXJ24eiArhGEJ55HgA";
@@ -75,26 +104,6 @@ function wita($keyword) {
 function tts($keyword) { 
     $uri = "https://translate.google.com/translate_tts?ie=UTF-8&tl=id-ID&client=tw-ob&q=" . $keyword; 
 
-    $response = Unirest\Request::get("$uri"); 
-    $result = $uri; 
-    return $result; 
-}
-#-------------------------[Close]-------------------------#
-#-------------------------[Open]-------------------------#
-function yandex($keyword) {
-    $uri = "https://translate.yandex.net/api/v1.5/tr.json/translate?lang=en-th&key=trnsl.1.1.20181219T062414Z.5b564dfddd592ba6.b745ec8bc8abce2a600d3fc10eb4a37fc77d1b20&text=" . $keyword;
-    $response = Unirest\Request::get("$uri");
-    $json = json_decode($response->raw_body, true);
-	$result .= $json['code'];
-	$result .= $json['lang'];
-	$result .= $json['text'][0];
-    return $result;
-}
-
-#-------------------------[Close]-------------------------#
-#-------------------------[Open]-------------------------#
-function longdo($keyword) { 
-    $uri = "https://dict.longdo.com/mobile.php?search=" . $keyword; 
     $response = Unirest\Request::get("$uri"); 
     $result = $uri; 
     return $result; 
