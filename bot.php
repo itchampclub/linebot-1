@@ -87,7 +87,7 @@ function yandex($keyword) {
     $json = json_decode($response->raw_body, true);
 	$result .= $json['code'];
 	$result .= $json['lang'];
-	$result .= $json['text'];
+	$result .= $json[0]['text'];
     return $result;
 }
 
