@@ -489,28 +489,36 @@ if ($message['type'] == 'text') {
     if ($command == 'ดิก') {
         $balas = array(
             'replyToken' => $replyToken, 
-            'messages' => array( 
-                array ( 
-                        'type' => 'flex', 
-                        'altText' => 'ผลลัพธ์', 			
-                            'contents' => array (
-                               'type' => 'bubble', 
-                               'body' => array (				    
-                                  'type' => 'box', 				    
-                                  'layout' => 'vertical', 				    
-                                     'contents' => array (				    
-                                     'type' => 'buttons', 
-                                  'actions' => array ( 
-                                  'type' => 'uri', 
-                                  'label' => 'ผลลัพธ์', 
-                                  'uri' => longdo($options)
-                              )
-                            )
-                          )
-                        ) 
+'messages' => array(
+array(
+    'type' => 'flex',
+    'altText' => 'ผลลัพธ์',
+  'type' =>  'bubble',
+  'body' => array(
+    'type' =>  'box',
+    'layout' =>  'vertical',
+    'spacing' =>  'md',
+    'contents' => array(
+      array(
+        'type' =>  'box',
+        'layout' =>  'vertical',
+        'spacing' =>  'none',
+        'contents' => array(
+          array(
+            'type' =>  'button',
+            'action' => array(
+              'type' =>  'uri',
+              'label' =>  'ผลลัพธ์',
+              'uri' => longdo($options)
 		    )
-		    )
-        ); 
+		  )
+		)
+	      )
+	    )
+	  )
+	)
+	)
+		)
     }
 }
 
