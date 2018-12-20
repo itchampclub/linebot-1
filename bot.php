@@ -491,25 +491,28 @@ if ($message['type'] == 'text') {
             'replyToken' => $replyToken, 
             'messages' => array( 
                 array ( 
-                        'type' => 'bubble', 
-                          'body' => array ( 
-                            'type' => 'box',
-                            'layout' => 'vertical',
-                            'contents' => array ( 				  
-                            'type' => 'buttons', 
-                            'actions' => array ( 
-                                'type' => 'uri', 
-                                'label' => 'ผลลัพธ์', 
-                                'uri' => longdo($options)
+                        'type' => 'flex', 
+                        'altText' => 'ผลลัพธ์', 			
+                            'contents' => array (
+                               'type' => 'bubble', 
+                               'body' => array (				    
+                                  'type' => 'box', 				    
+                                  'layout' => 'vertical', 				    
+                                     'contents' => array (				    
+                                     'type' => 'buttons', 
+                                  'actions' => array ( 
+                                  'type' => 'uri', 
+                                  'label' => 'ผลลัพธ์', 
+                                  'uri' => longdo($options)
                               )
                             )
                           )
                         ) 
 		    )
+		    )
         ); 
     }
 }
-
 
 
 #-------------------------[Close]-------------------------#
