@@ -492,11 +492,12 @@ if ($message['type'] == 'text') {
             'messages' => array( 
                 array ( 
                         'type' => 'bubble', 
-                          'body' =>  
-                          array ( 
+                          'body' => array ( 
+                            'type' => 'box',
+                            'layout' => 'vertical',
+                            'contents' => array ( 				  
                             'type' => 'buttons', 
-                            'actions' =>  
-                            array ( 
+                            'actions' => array ( 
                                 'type' => 'uri', 
                                 'label' => 'ผลลัพธ์', 
                                 'uri' => longdo($options)
@@ -504,6 +505,7 @@ if ($message['type'] == 'text') {
                             )
                           )
                         ) 
+		    )
         ); 
     }
 }
