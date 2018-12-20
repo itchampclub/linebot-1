@@ -492,16 +492,21 @@ if ($message['type'] == 'text') {
             'messages' => array( 
                 array ( 
                         'type' => 'template', 
-                          'altText' => 'Dictionary', 
+                          'altText' => 'Quotes', 
                           'template' =>  
                           array ( 
-                            'type' => 'buttons',  
+                            'type' => 'buttons', 
+                            'thumbnailImageUrl' => 'Error', 
+                            'imageAspectRatio' => 'rectangle', 
+                            'imageSize' => 'cover', 
+                            'imageBackgroundColor' => '#FFFFFF', 
+                            'title' => 'Halo', 
                             'text' => $result, 
                             'actions' =>  
                             array ( 
                               0 =>  
                               array ( 
-              'type' =>  'uri',
+                'type' =>  'uri',
               'label' =>  'ผลลัพธ์',
               'uri' => longdo($options)
                               )
@@ -511,7 +516,9 @@ if ($message['type'] == 'text') {
             ) 
         ); 
     }
-}
+}    
+
+
 
 
 #-------------------------[Close]-------------------------#
