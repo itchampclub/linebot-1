@@ -506,9 +506,9 @@ if ($message['type'] == 'text') {
                 'type' =>  'uri',
               'label' =>  'ผลลัพธ์',
               'uri' => longdo($options)
-                              ),
-                            ), 
-                          ), 
+                              )
+                            )
+                          )
                         ) 
             ) 
         ); 
