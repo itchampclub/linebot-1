@@ -487,21 +487,18 @@ if ($message['type'] == 'text') {
 #-------------------------[Open]-------------------------#
 if ($message['type'] == 'text') {
     if ($command == 'ดิก') {
+        $result = longdo($options);
         $balas = array( 
             'replyToken' => $replyToken, 
             'messages' => array( 
                 array ( 
                         'type' => 'template', 
-                          'altText' => 'Quotes', 
+                          'altText' => 'Instagram' . $options, 
                           'template' =>  
                           array ( 
                             'type' => 'buttons', 
-                            'thumbnailImageUrl' => 'Error', 
-                            'imageAspectRatio' => 'rectangle', 
-                            'imageSize' => 'cover', 
-                            'imageBackgroundColor' => '#FFFFFF', 
-                            'title' => 'Halo', 
-                            'text' => $result, 
+                            'title' => 'FFFFFF', 
+                            'text' => 'FFFFFF', 
                             'actions' =>  
                             array ( 
                               0 =>  
@@ -509,14 +506,19 @@ if ($message['type'] == 'text') {
                 'type' =>  'uri',
               'label' =>  'ผลลัพธ์',
               'uri' => longdo($options)
-                              )
-                            )
-                          )
+                              ),
+                            ), 
+                          ), 
                         ) 
             ) 
         ); 
     }
-}    
+} 
+
+
+
+
+
 
 
 
