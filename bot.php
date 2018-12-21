@@ -526,7 +526,7 @@ if ($message['type'] == 'text') {
 #-------------------------[Open]-------------------------#
 if ($message['type'] == 'text') {
     if ($command == 'ผลสอบ') {
-	$result = 'line://app/1627634109-pAPg632x';
+	$result = 'https://foodguidebot.herokuapp.com/grade.php';
         $balas = array( 
             'replyToken' => $replyToken, 
             'messages' => array( 
