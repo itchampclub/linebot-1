@@ -536,7 +536,7 @@ if ($message['type'] == 'text') {
                           'template' =>  
                           array ( 
                             'type' => 'buttons', 
-                            'text' => 'Longdo Dictionary', 
+                            'text' => 'ดูผลสอบล่าสุด', 
                             'actions' =>  
                             array ( 
                               0 =>  
