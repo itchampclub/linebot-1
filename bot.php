@@ -261,7 +261,7 @@ if ($command == 'Help') {
     );
 }
 if ($type == 'join') {
-    $text = "Terimakasih Telah invite aku ke group ini silahkan ketik Help untuk lihat command aku :)";
+    $text = "";
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
