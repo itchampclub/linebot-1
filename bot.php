@@ -526,6 +526,7 @@ if ($message['type'] == 'text') {
 #-------------------------[Open]-------------------------#
 if ($message['type'] == 'text') {
     if ($command == 'ผลสอบ') {
+	$result = 'line://app/1627634109-pAPg632x';
         $balas = array( 
             'replyToken' => $replyToken, 
             'messages' => array( 
@@ -542,13 +543,13 @@ if ($message['type'] == 'text') {
                               array ( 
                 'type' =>  'uri',
               'label' =>  'ดูผลสอบ',
-              'uri' => 'line://app/1627634109-pAPg632x';
+              'uri' => $result 
                               )
                             )
                           )
                         ) 
             ) 
-        )
+        );
     }
 } 
 
