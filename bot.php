@@ -497,14 +497,13 @@ if ($message['type'] == 'text') {
                           'template' =>  
                           array ( 
                             'type' => 'buttons', 
-                            'title' => 'FFFFFF', 
-                            'text' => 'FFFFFF', 
+                            'text' => 'Longdo Dictionary', 
                             'actions' =>  
                             array ( 
                               0 =>  
                               array ( 
                 'type' =>  'uri',
-              'label' =>  'ผลลัพธ์',
+              'label' =>  'ดูผลลัพธ์',
               'uri' => longdo($options)
                               )
                             )
