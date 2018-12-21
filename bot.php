@@ -514,14 +514,36 @@ if ($message['type'] == 'text') {
     }
 } 
 
-
-
-
-
-
-
-
-
+#-------------------------[Close]-------------------------#
+#-------------------------[Open]-------------------------#
+if ($message['type'] == 'text') {
+    if ($command == 'ตารางสอบ') {
+	$result = 'https://foodguidebot.herokuapp.com/grade2.php';
+        $balas = array( 
+            'replyToken' => $replyToken, 
+            'messages' => array( 
+                array ( 
+                        'type' => 'template', 
+                          'altText' => 'Grade', 
+                          'template' =>  
+                          array ( 
+                            'type' => 'buttons', 
+                            'text' => 'ดูตารางสอบล่าสุด', 
+                            'actions' =>  
+                            array ( 
+                              0 =>  
+                              array ( 
+                'type' =>  'uri',
+              'label' =>  'ดูตารางสอบ',
+              'uri' => $result 
+                              )
+                            )
+                          )
+                        ) 
+            ) 
+        );
+    }
+} 
 #-------------------------[Close]-------------------------#
 #-------------------------[Open]-------------------------#
 if ($message['type'] == 'text') {
@@ -552,15 +574,6 @@ if ($message['type'] == 'text') {
         );
     }
 } 
-
-
-
-
-
-
-
-
-
 #-------------------------[Close]-------------------------#
 #-------------------------[Open]-------------------------#
 if($message['type']=='text') {
