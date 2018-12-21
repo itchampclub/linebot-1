@@ -493,7 +493,7 @@ if ($message['type'] == 'text') {
             'messages' => array( 
                 array ( 
                         'type' => 'template', 
-                          'altText' => 'Instagram' . $options, 
+                          'altText' => 'Result ' . $options, 
                           'template' =>  
                           array ( 
                             'type' => 'buttons', 
@@ -511,6 +511,44 @@ if ($message['type'] == 'text') {
                         ) 
             ) 
         ); 
+    }
+} 
+
+
+
+
+
+
+
+
+
+#-------------------------[Close]-------------------------#
+#-------------------------[Open]-------------------------#
+if ($message['type'] == 'text') {
+    if ($command == 'ผลสอบ') {
+        $balas = array( 
+            'replyToken' => $replyToken, 
+            'messages' => array( 
+                array ( 
+                        'type' => 'template', 
+                          'altText' => 'Grade', 
+                          'template' =>  
+                          array ( 
+                            'type' => 'buttons', 
+                            'text' => 'Longdo Dictionary', 
+                            'actions' =>  
+                            array ( 
+                              0 =>  
+                              array ( 
+                'type' =>  'uri',
+              'label' =>  'ดูผลสอบ',
+              'uri' => 'line://app/1627634109-pAPg632x';
+                              )
+                            )
+                          )
+                        ) 
+            ) 
+        )
     }
 } 
 
