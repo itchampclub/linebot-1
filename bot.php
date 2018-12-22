@@ -27,7 +27,7 @@ if (count($pesan_datang) > 2) {
     }
 }
 
-#-------------------------[Function Open]-------------------------#
+#-------------------------[Main Function]-------------------------#
 #-------------------------[Open]-------------------------#
 function yandex($keyword) {
     $uri = "https://translate.yandex.net/api/v1.5/tr.json/translate?lang=en-th&key=trnsl.1.1.20181219T062414Z.5b564dfddd592ba6.b745ec8bc8abce2a600d3fc10eb4a37fc77d1b20&text=" . $keyword;
@@ -36,7 +36,6 @@ function yandex($keyword) {
 	$result = $json['text'][0];
     return $result;
 }
-
 #-------------------------[Close]-------------------------#
 #-------------------------[Open]-------------------------#
 function longdo($keyword) { 
@@ -62,7 +61,7 @@ function urb_dict($keyword) {
 
 
 
-
+#-------------------------[Optional Function]-------------------------#
 #-------------------------[Open]-------------------------#
 function film_syn($keyword) {
     $uri = "http://www.omdbapi.com/?t=" . $keyword . '&plot=full&apikey=d5010ffe';
