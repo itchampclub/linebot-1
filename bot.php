@@ -46,31 +46,26 @@ function longdo($keyword) {
     return $result; 
 }
 #-------------------------[Close]-------------------------#
-
-
-
-
-
-
-
-
-
-
 #-------------------------[Open]-------------------------#
-function quotes($keyword) {
-    $uri = "https://rest.farzain.com/api/motivation.php?apikey=fDh6y7ZwXJ24eiArhGEJ55HgA";
+function urb_dict($keyword) {
+    $uri = "http://api.urbandictionary.com/v0/define?term=" . $keyword;
     $response = Unirest\Request::get("$uri");
     $json = json_decode($response->raw_body, true);
-    $result = "「Quotes」";
-    $result .= "Status : Success!!!";
-    $result .= "\nQuotes : ";
-    $result .= $json['result']['quotes'];
-    $result .= "\nBy : ";
-    $result .= $json['result']['by'];
-	$result .= "\n「Done~」";
+    $result = $json['list'][0]['definition'];
+    $result .= "\n\nExamples : \n";
+    $result .= $json['list'][0]['example'];
     return $result;
 }
 #-------------------------[Close]-------------------------#
+
+
+
+
+
+
+
+
+
 #-------------------------[Open]-------------------------#
 function wib($keyword) {
     $uri = "https://time.siswadi.com/timezone/?address=Jakarta";
@@ -109,17 +104,7 @@ function tts($keyword) {
     return $result; 
 }
 #-------------------------[Close]-------------------------#
-#-------------------------[Open]-------------------------#
-function urb_dict($keyword) {
-    $uri = "http://api.urbandictionary.com/v0/define?term=" . $keyword;
-    $response = Unirest\Request::get("$uri");
-    $json = json_decode($response->raw_body, true);
-    $result = $json['list'][0]['definition'];
-    $result .= "\n\nExamples : \n";
-    $result .= $json['list'][0]['example'];
-    return $result;
-}
-#-------------------------[Close]-------------------------#
+
 #-------------------------[Open]-------------------------#
 function zodiak($keyword) {
     $uri = "https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=ervan&tanggal=" . $keyword;
@@ -462,13 +447,15 @@ if($message['type']=='text') {
                 array (
                 'type' => 'audio',
                 'originalContentUrl' => $result,
-                'duration' => 10000,
+                'duration' => 2000,
                 )
             )
         );
 }
 }
 #-------------------------[Close]-------------------------#
+
+
 #-------------------------[Open]-------------------------#
 if ($message['type'] == 'text') {
     if ($command == '/definition') {
@@ -647,57 +634,6 @@ if($message['type']=='text') {
 #-------------------------[Close]-------------------------#
 #-------------------------[Open]-------------------------#
 if($message['type']=='text') {
-        if ($command == '/creator') { 
-     
-        $balas = array( 
-            'replyToken' => $replyToken, 
-            'messages' => array( 
-                array ( 
-                        'type' => 'template', 
-                          'altText' => 'About Creator BedBotdzs', 
-                          'template' =>  
-                          array ( 
-                            'type' => 'buttons', 
-                            'thumbnailImageUrl' => 'https://bpptik.kominfo.go.id/wp-content/uploads/2016/09/Programmer.jpg', 
-                            'imageAspectRatio' => 'rectangle', 
-                            'imageSize' => 'cover', 
-                            'imageBackgroundColor' => '#FFFFFF', 
-                            'title' => 'Muhammad Raihan Permadi', 
-                            'text' => 'Creator BedBotdzs', 
-                            'actions' =>  
-                            array ( 
-                              0 =>  
-                              array ( 
-                                'type' => 'uri', 
-                                'label' => 'Contact', 
-                                'uri' => 'https://line.me/ti/p/~rhnprmd', 
-                              ), 
-                            ), 
-                          ), 
-                        ) 
-            ) 
-        ); 
-    }
-}
-#-------------------------[Close]-------------------------#
-#-------------------------[Open]-------------------------#
-if($message['type']=='text') {
-        if ($command == '/film-syn') {
-        $result = film_syn($options);
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array( 
-                    'type' => 'text',
-                    'text' => $result
-                )
-            )
-        );
-    }
-}
-#-------------------------[Close]-------------------------#
-#-------------------------[Open]-------------------------#
-if($message['type']=='text') {
         if ($command == '/film') {
 
         $result = film($options);
@@ -713,58 +649,6 @@ if($message['type']=='text') {
     }
 }
 #-------------------------[Close]-------------------------#
-#-------------------------[Open]-------------------------#
-if($message['type']=='text') {
-        if ($command == '/shalat') {
-
-        $result = shalat($options);
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-                    'type' => 'text',
-                    'text' => $result
-                )
-            )
-        );
-    }
-}
-#-------------------------[Close]-------------------------#
-#-------------------------[Open]-------------------------#
-if($message['type']=='text') {
-        if ($command == '/qiblat') { 
-     
-        $result = qibla($options);
-        $balas = array( 
-            'replyToken' => $replyToken, 
-            'messages' => array( 
-                array ( 
-                        'type' => 'template', 
-                          'altText' => 'Qiblat shalat', 
-                          'template' =>  
-                          array ( 
-                            'type' => 'buttons', 
-                            'thumbnailImageUrl' => $result, 
-                            'imageAspectRatio' => 'rectangle', 
-                            'imageSize' => 'cover', 
-                            'imageBackgroundColor' => '#FFFFFF', 
-                            'title' => 'Qiblat Shalat', 
-                            'text' => 'Cek Full Image', 
-                            'actions' =>  
-                            array ( 
-                              0 =>  
-                              array ( 
-                                'type' => 'uri', 
-                                'label' => 'Click Here', 
-                                'uri' => $result, 
-                              ), 
-                            ), 
-                          ), 
-                        ) 
-            ) 
-        ); 
-    }
-}
 if (isset($balas)) {
     $result = json_encode($balas);
 //$result = ob_get_clean();
