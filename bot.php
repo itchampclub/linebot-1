@@ -11,6 +11,7 @@ $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 $userId     = $client->parseEvents()[0]['source']['userId'];
 $groupId    = $client->parseEvents()[0]['source']['groupId'];
 $replyToken = $client->parseEvents()[0]['replyToken'];
+$pushMessage = $client->parseEvents()[0]['pushMessage'];
 $timestamp  = $client->parseEvents()[0]['timestamp'];
 $type       = $client->parseEvents()[0]['type'];
 $message    = $client->parseEvents()[0]['message'];
