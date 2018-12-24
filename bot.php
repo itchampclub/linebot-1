@@ -349,4 +349,22 @@ if (isset($balas)) {
     file_put_contents('./balasan.json', $result);
     $client->replyMessage($balas);
 } 
+else
+	{
+	$result = 'Hello user'
+        $balas = array(
+            'to' => $userId,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+	
+    $result = json_encode($balas);
+//$result = ob_get_clean();
+    file_put_contents('./balasan.json', $result);
+    $client->pushMessage($balas);
+} 
 ?>
