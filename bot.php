@@ -326,6 +326,19 @@ if($message['type']=='text') {
     }
 }
 #-------------------------[Close]-------------------------#
+if($message['type']=='text') {
+        if ($command == 'myid') {
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $userId
+                )
+            )
+        );
+    }
+}
 #-------------------------[Open]-------------------------#
 if($message['type']=='text') {
         if ($command == '/film') {
