@@ -356,7 +356,7 @@ if($message['type']=='text') {
     }
 }
 #-------------------------[Close]-------------------------#
-        if ($command == '') 
+        if ($replyToken == '') 
 	{
 		$uid = 'Ub3ea97c513612d6e3401302f051f81dc';
 		$result = 'Good morning'
@@ -373,7 +373,8 @@ if($message['type']=='text') {
     file_put_contents('./balasan.json', $result);
     $client->replyMessage($balas);
 	}	
-else{		
+else
+{		
 if (isset($balas)) {
     $result = json_encode($balas);
 //$result = ob_get_clean();
