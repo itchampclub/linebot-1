@@ -349,4 +349,8 @@ if (isset($balas)) {
     file_put_contents('./balasan.json', $result);
     $client->replyMessage($balas);
 }
+else
+{
+	echo "Good morning!"; 
+}
 ?>
