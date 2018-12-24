@@ -358,20 +358,6 @@ if($message['type']=='text') {
 #-------------------------[Close]-------------------------#
         if ($command == '') 
 	{
-		$uid = 'Ub3ea97c513612d6e3401302f051f81dc';
-		$result = 'Good morning';
-             $balas = array(
-            'pushMessage' => $uid,
-            'messages' => array(
-                array(
-                    'type' => 'text',
-                    'text' => $result
-                )
-            )
-        );
-		    $result = json_encode($balas);
-    file_put_contents('./balasan.json', $result);
-    $client->pushMessage($balas);
 	}	
 else
 {		
