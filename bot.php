@@ -3,7 +3,7 @@ require_once('./line_class.php');
 
 
 $channelAccessToken = 'WsEg0h0hvWL6AH/5vRTp/VoKgHexRMQ+FOgbI9xrJ19q07jk59Z4X9p6laKD7BR6s8F8E3rZ0pvht4n4NOAtNkA726d4quuAYJW/P0rqABDermZI5505WTp5ix0BjLn6WVb67TpH/sIl6Bwv7m+yagdB04t89/1O/w1cDnyilFU='; //sesuaikan 
-$channelSecret = '88556d8dd777dea8d4508b361332a939';//sesuaikan
+$channelSecret = '88556d8dd777dea8d4508b361332a939';
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 $userId     = $client->parseEvents()[0]['source']['userId'];
 $groupId    = $client->parseEvents()[0]['source']['groupId'];
@@ -12,7 +12,6 @@ $timestamp  = $client->parseEvents()[0]['timestamp'];
 $type       = $client->parseEvents()[0]['type'];
 $message    = $client->parseEvents()[0]['message'];
 $messageid  = $client->parseEvents()[0]['message']['id'];
-$profil = $client->profil($userId);
 $pesan_datang = explode(" ", $message['text']);
 $msg_type = $message['type'];
 $command = $pesan_datang[0];
@@ -352,18 +351,10 @@ if($message['type']=='text') {
         );
     }
 }
-#-------------------------[Close]-------------------------#
-        if ($command == '') 
-	{
-		$textMessageBuilder = 'hello';
-	    $client->pushMessage('Ub3ea97c513612d6e3401302f051f81dc', $textMessageBuilder);
-	}	
-else
-{		
+#-------------------------[Close]-------------------------#	
 if (isset($balas)) {
     $result = json_encode($balas);
     file_put_contents('./balasan.json', $result);
     $client->replyMessage($balas);
 } 
-}
 ?>
