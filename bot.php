@@ -355,6 +355,8 @@ if($message['type']=='text') {
 #-------------------------[Close]-------------------------#
         if ($command == '') 
 	{
+		$textMessageBuilder = 'hello';
+	    $client->pushMessage('Ub3ea97c513612d6e3401302f051f81dc', $textMessageBuilder);
 	}	
 else
 {		
