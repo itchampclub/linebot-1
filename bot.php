@@ -359,7 +359,7 @@ if($message['type']=='text') {
         if ($replyToken == '') 
 	{
 		$uid = 'Ub3ea97c513612d6e3401302f051f81dc';
-		$result = 'Good morning'
+		$result = 'Good morning';
              $balas = array(
             'pushMessage' => $uid,
             'messages' => array(
