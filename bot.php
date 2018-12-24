@@ -371,7 +371,7 @@ if($message['type']=='text') {
         );
 		    $result = json_encode($balas);
     file_put_contents('./balasan.json', $result);
-    $client->replyMessage($balas);
+    $client->pushMessage($balas);
 	}	
 else
 {		
