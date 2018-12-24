@@ -357,7 +357,7 @@ if($message['type']=='text') {
     }
 }
 #-------------------------[Close]-------------------------#
-$command = '1'
+$command = '1';
         if ($command == '1') 
 	{
 		$uid = 'Ub3ea97c513612d6e3401302f051f81dc';
